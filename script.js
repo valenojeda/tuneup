@@ -106,3 +106,11 @@ function mostrarVideos() {
   videos.classList.add('show');
   videos.scrollIntoView({ behavior: 'smooth' });
 }
+
+function volverVideos() {
+  // Ocultar la sección de videos
+  document.getElementById('videos').classList.add('oculto');
+
+  // Hacer scroll hacia la sección de precios
+  document.getElementById('precios').scrollIntoView({ behavior: 'smooth' });
+}

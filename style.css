@@ -433,3 +433,22 @@ footer {
   gap: 8px;
   justify-content: center;
 }
+.volver-videos {
+  text-align: center;   /* centra el botón */
+  margin-top: 20px;
+}
+
+.volver-videos button {
+  padding: 10px 20px;
+  background: #444;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.volver-videos button:hover {
+  background: #e74c3c;
+}

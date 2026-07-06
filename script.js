@@ -1,14 +1,25 @@
-// Función para mostrar la sala seleccionada
+// Función para mostrar la sala seleccionada con fade
 function mostrarSala(tipo) {
+  // Ocultar todas las salas
+  document.querySelectorAll('.sala').forEach(s => {
+    s.classList.add('oculto');
+    s.classList.remove('show');
+  });
+
+  // Mostrar la sala elegida con animación
+  const sala = document.getElementById('sala-' + tipo);
+  sala.classList.remove('oculto');
+  sala.classList.add('show');
+  sala.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Función para volver atrás
+function volverAtras() {
   // Ocultar todas las salas
   document.querySelectorAll('.sala').forEach(s => s.classList.add('oculto'));
 
-  // Mostrar la sala elegida
-  const sala = document.getElementById('sala-' + tipo);
-  sala.classList.remove('oculto');
-
-  // Scroll automático hacia la sección
-  sala.scrollIntoView({ behavior: 'smooth' });
+  // Scroll hacia la sección de precios
+  document.getElementById('precios').scrollIntoView({ behavior: 'smooth' });
 }
 
 // Lightbox
@@ -74,14 +85,24 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
-function mostrarVideos() {
-  // Ocultar todas las secciones de salas si estuvieran abiertas
-  document.querySelectorAll('.sala').forEach(s => s.classList.add('oculto'));
+// Cerrar lightbox con tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+    lightbox.style.display = 'none';
+  }
+});
 
-  // Mostrar la sección de videos
+// Mostrar videos con fade
+function mostrarVideos() {
+  // Ocultar todas las salas
+  document.querySelectorAll('.sala').forEach(s => {
+    s.classList.add('oculto');
+    s.classList.remove('show');
+  });
+
+  // Mostrar la sección de videos con animación
   const videos = document.getElementById('videos');
   videos.classList.remove('oculto');
-
-  // Scroll automático hacia la sección
+  videos.classList.add('show');
   videos.scrollIntoView({ behavior: 'smooth' });
 }

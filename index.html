@@ -18,25 +18,24 @@
   </ul>
 </nav>
 
-  <!-- Portada con imagen de fondo y logo transparente -->
+  <!-- Portada -->
   <header class="hero">
     <div class="hero-overlay">
       <img src="img/logo_transparente.png" alt="Logo Tune Up" class="hero-logo">
     </div>
   </header>
 
-  <!-- Sección de bienvenida -->
+  <!-- Bienvenida -->
   <section id="bienvenida">
     <div class="bienvenida-content">
       <h2>Bienvenidos a TUNE UP 🎵</h2>
       <p class="subtitulo">Una sala donde la música cobra vida</p>
-      <p>En Tune Up creemos que cada ensayo cuenta. Por eso armamos un espacio pensado para músicos: sonido claro, equipos de calidad y el ambiente que necesitás para concentrarte y crecer.</p>
-      <p>Ya sea que estés armando temas nuevos, preparando la fecha o solo quieras juntarte a zapar, esta es tu casa.</p>
+      <p>En Tune Up creemos que cada ensayo cuenta...</p>
       <p class="frase-final">Afiná tu sonido. Subí tu nivel. <span class="resaltado">Tune Up.</span></p>
     </div>
   </section>
 
-  <!-- Sección de precios -->
+  <!-- Precios -->
 <section id="precios">
   <h2>Precios</h2>
   <div class="precios-container">
@@ -45,15 +44,14 @@
     <div class="precio-card">
       <h3>🎸 Sala Chica</h3>
       <p class="precio">$450 / hora</p>
-      <p>
-        Espacio ideal para solistas o grupos pequeños.  
-        Incluye:  
-        <br>🎶 Amplificador  
-        <br>🔊 Parlante  
-        <br>🎚️ Consola  
-        <br>🎤 Micrófono  
-        <br>🥁 Batería
-      </p>
+      <p>Espacio ideal para solistas o grupos pequeños. Incluye:</p>
+      <ul>
+        <li>🎵 Amplificador</li>
+        <li>🔊 Parlante</li>
+        <li>🎚️ Consola</li>
+        <li>🎤 Micrófono</li>
+        <li>🥁 Batería</li>
+      </ul>
       <p><strong>Promo cuponera:</strong> 4 ensayos de 2 horas por $2400</p>
       <button onclick="mostrarSala('chica')">Ver fotos</button>
     </div>
@@ -62,16 +60,15 @@
     <div class="precio-card">
       <h3>🥁 Sala Grande</h3>
       <p class="precio">$600 / hora</p>
-      <p>
-        Ideal para bandas completas.  
-        Incluye:  
-        <br>🎸 Amplificador de guitarra  
-        <br>🎶 Amplificador de bajo  
-        <br>🎤 Micrófonos  
-        <br>🥁 Batería completa  
-        <br>🎚️ Consola profesional  
-        <br>🔊 Monitores de piso y parlantes
-      </p>
+      <p>Ideal para bandas completas. Incluye:</p>
+      <ul>
+        <li>🎸 Amplificador de guitarra</li>
+        <li>🎵 Amplificador de bajo</li>
+        <li>🎤 Micrófonos</li>
+        <li>🥁 Batería completa</li>
+        <li>🎚️ Consola profesional</li>
+        <li>🔊 Monitores de piso y parlantes</li>
+      </ul>
       <p><strong>Promo inauguración:</strong> válida hasta octubre</p>
       <button onclick="mostrarSala('grande')">Ver fotos</button>
     </div>
@@ -79,22 +76,40 @@
   </div>
 </section>
 
-
-
-<!-- Sala Chica (oculta por defecto) -->
-<section id="sala-chica" class="sala oculto">
-  <h2>Sala Chica</h2>
+<!-- Sala Chica -->
+<section id="sala-chica" class="sala oculto fade">
+  <h2>🎸 Sala Chica</h2>
+  <p>Espacio ideal para solistas o grupos pequeños. Incluye:</p>
+  <ul>
+    <li>🎵 Amplificador</li>
+    <li>🔊 Parlante</li>
+    <li>🎚️ Consola</li>
+    <li>🎤 Micrófono</li>
+    <li>🥁 Batería</li>
+  </ul>
+  <p><strong>Promo cuponera:</strong> 4 ensayos de 2 horas por $2400</p>
   <div class="thumbnails">
     <img src="img/12.jpeg">
     <img src="img/13.jpeg">   
     <img src="img/14.jpeg">
     <img src="img/16.jpeg">
   </div>
+  <button onclick="volverAtras()">⬅ Volver</button>
 </section>
 
-<!-- Sala Grande (oculta por defecto) -->
-<section id="sala-grande" class="sala oculto">
-  <h2>Sala Grande</h2>
+<!-- Sala Grande -->
+<section id="sala-grande" class="sala oculto fade">
+  <h2>🥁 Sala Grande</h2>
+  <p>Ideal para bandas completas. Incluye:</p>
+  <ul>
+    <li>🎸 Amplificador de guitarra</li>
+    <li>🎵 Amplificador de bajo</li>
+    <li>🎤 Micrófonos</li>
+    <li>🥁 Batería completa</li>
+    <li>🎚️ Consola profesional</li>
+    <li>🔊 Monitores de piso y parlantes</li>
+  </ul>
+  <p><strong>Promo inauguración:</strong> válida hasta octubre</p>
   <div class="thumbnails">
     <img src="img/1.jpeg">
     <img src="img/2.jpeg"> 
@@ -107,6 +122,7 @@
     <img src="img/9.jpeg">
     <img src="img/10.jpeg">
   </div>
+  <button onclick="volverAtras()">⬅ Volver</button>
 </section>
 
   <!-- Lightbox -->
@@ -118,42 +134,28 @@
   </div>
 
   <!-- Videos -->
-  <section id="videos" class="oculto">
-  <h2>Videos</h2>
-  <div class="videos">
-    <video controls>
-      <source src="video/video1.mp4" type="video/mp4">
-      Tu navegador no soporta video.
-    </video>
-    <video controls>
-      <source src="video/video2.mp4" type="video/mp4">
-      Tu navegador no soporta video.
-    </video>
-  </div>
-</section>
+  <section id="videos" class="oculto fade">
+    <h2>Videos</h2>
+    <div class="videos">
+      <video controls>
+        <source src="video/video1.mp4" type="video/mp4">
+      </video>
+      <video controls>
+        <source src="video/video2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
 
-
-  
   <!-- Contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
     <p>Reservá tu sala escribiéndonos:</p>
-
-    <!-- Botones de WhatsApp -->
     <div class="contact-buttons">
-      <a href="https://wa.me/59897900287" target="_blank" class="btn whatsapp">
-        📱 WhatsApp 097 900 287
-      </a>
-      <a href="https://wa.me/59897170971" target="_blank" class="btn whatsapp">
-        📱 WhatsApp 097 170 971
-      </a>
+      <a href="https://wa.me/59897900287" target="_blank" class="btn whatsapp">📱 WhatsApp 097 900 287</a>
+      <a href="https://wa.me/59897170971" target="_blank" class="btn whatsapp">📱 WhatsApp 097 170 971</a>
     </div>
-
-    <!-- Botón de Instagram -->
     <div class="contact-buttons">
-      <a href="https://www.instagram.com/saladeensayo_tune_up" target="_blank" class="btn instagram">
-        📸 Instagram @saladeensayo_tune_up
-      </a>
+      <a href="https://www.instagram.com/saladeensayo_tune_up" target="_blank" class="btn instagram">📸 Instagram @saladeensayo_tune_up</a>
     </div>
   </section>
 

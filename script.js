@@ -1,3 +1,17 @@
+// Función para mostrar la sala seleccionada
+function mostrarSala(tipo) {
+  // Ocultar todas las salas
+  document.querySelectorAll('.sala').forEach(s => s.classList.add('oculto'));
+
+  // Mostrar la sala elegida
+  const sala = document.getElementById('sala-' + tipo);
+  sala.classList.remove('oculto');
+
+  // Scroll automático hacia la sección
+  sala.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Lightbox
 const thumbnails = document.querySelectorAll('.thumbnails img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -6,17 +20,30 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 let currentIndex = 0;
-const images = Array.from(thumbnails);
+let images = [];
 
-function showImage(index) {
-  lightboxImg.src = images[index].src;
-  currentIndex = index;
-  lightbox.style.display = 'block';
+// Actualizar lista de imágenes cada vez que se muestra una sala
+function actualizarImagenes() {
+  images = Array.from(document.querySelectorAll('.sala:not(.oculto) .thumbnails img'));
 }
 
-// Abrir imagen al hacer clic en miniatura
-thumbnails.forEach((img, index) => {
-  img.addEventListener('click', () => showImage(index));
+// Mostrar imagen en el lightbox
+function showImage(index) {
+  if (images.length > 0) {
+    lightboxImg.src = images[index].src;
+    currentIndex = index;
+    lightbox.style.display = 'block';
+  }
+}
+
+// Delegar evento de clic en miniaturas
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.thumbnails img')) {
+    actualizarImagenes();
+    const img = e.target;
+    const index = images.indexOf(img);
+    showImage(index);
+  }
 });
 
 // Cerrar con botón "X"
@@ -33,12 +60,28 @@ lightbox.addEventListener('click', (e) => {
 
 // Botón anterior
 prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
+  if (images.length > 0) {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
 });
 
 // Botón siguiente
 nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
+  if (images.length > 0) {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
 });
+
+function mostrarVideos() {
+  // Ocultar todas las secciones de salas si estuvieran abiertas
+  document.querySelectorAll('.sala').forEach(s => s.classList.add('oculto'));
+
+  // Mostrar la sección de videos
+  const videos = document.getElementById('videos');
+  videos.classList.remove('oculto');
+
+  // Scroll automático hacia la sección
+  videos.scrollIntoView({ behavior: 'smooth' });
+}

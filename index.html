@@ -7,15 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
+ <!-- Navbar -->
 <nav class="navbar">
   <div class="logo">TUNE UP</div>
   <ul class="menu">
     <li><a href="#bienvenida">Inicio</a></li>
-     <li><a href="#precios">Precios</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#videos">Videos</a></li>
-  <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#videos" onclick="mostrarVideos()">Videos</a></li>
   </ul>
 </nav>
 
@@ -41,40 +40,74 @@
 <section id="precios">
   <h2>Precios</h2>
   <div class="precios-container">
+
+    <!-- Sala Chica -->
     <div class="precio-card">
       <h3>🎸 Sala Chica</h3>
-      <p class="precio">$400 / hora</p>
-      <p>Espacio ideal para solistas o grupos pequeños. Incluye micrófono, amplificador y aire acondicionado.</p>
+      <p class="precio">$450 / hora</p>
+      <p>
+        Espacio ideal para solistas o grupos pequeños.  
+        Incluye:  
+        <br>🎶 Amplificador  
+        <br>🔊 Parlante  
+        <br>🎚️ Consola  
+        <br>🎤 Micrófono  
+        <br>🥁 Batería
+      </p>
+      <p><strong>Promo cuponera:</strong> 4 ensayos de 2 horas por $2400</p>
+      <button onclick="mostrarSala('chica')">Ver fotos</button>
     </div>
 
+    <!-- Sala Grande -->
     <div class="precio-card">
       <h3>🥁 Sala Grande</h3>
-      <p class="precio">$700 / hora</p>
-      <p>Perfecta para bandas completas. Equipos de batería, amplificadores, micrófonos y consola profesional.</p>
+      <p class="precio">$600 / hora</p>
+      <p>
+        Ideal para bandas completas.  
+        Incluye:  
+        <br>🎸 Amplificador de guitarra  
+        <br>🎶 Amplificador de bajo  
+        <br>🎤 Micrófonos  
+        <br>🥁 Batería completa  
+        <br>🎚️ Consola profesional  
+        <br>🔊 Monitores de piso y parlantes
+      </p>
+      <p><strong>Promo inauguración:</strong> válida hasta octubre</p>
+      <button onclick="mostrarSala('grande')">Ver fotos</button>
     </div>
+
   </div>
 </section>
 
-  <!-- Galería -->
-  <section id="galeria">
-    <h2>Galería</h2>
-    <div class="thumbnails">
-      <img src="img/1.jpeg" alt="Foto 1">
-      <img src="img/2.jpeg" alt="Foto 2">
-      <img src="img/3.jpeg" alt="Foto 3">
-      <img src="img/4.jpeg" alt="Foto 4">
-      <img src="img/5.jpeg" alt="Foto 5">
-      <img src="img/6.jpeg" alt="Foto 6">
-      <img src="img/7.jpeg" alt="Foto 7">
-      <img src="img/8.jpeg" alt="Foto 8">
-      <img src="img/9.jpeg" alt="Foto 9">
-      <img src="img/10.jpeg" alt="Foto 10">
-      <img src="img/12.jpeg" alt="Foto 12">
-      <img src="img/13.jpeg" alt="Foto 13">
-      <img src="img/14.jpeg" alt="Foto 14">
-      <img src="img/16.jpeg" alt="Foto 16">
-    </div>
-  </section>
+
+
+<!-- Sala Chica (oculta por defecto) -->
+<section id="sala-chica" class="sala oculto">
+  <h2>Sala Chica</h2>
+  <div class="thumbnails">
+    <img src="img/12.jpeg">
+    <img src="img/13.jpeg">   
+    <img src="img/14.jpeg">
+    <img src="img/16.jpeg">
+  </div>
+</section>
+
+<!-- Sala Grande (oculta por defecto) -->
+<section id="sala-grande" class="sala oculto">
+  <h2>Sala Grande</h2>
+  <div class="thumbnails">
+    <img src="img/1.jpeg">
+    <img src="img/2.jpeg"> 
+    <img src="img/3.jpeg">
+    <img src="img/4.jpeg">
+    <img src="img/5.jpeg">
+    <img src="img/6.jpeg">
+    <img src="img/7.jpeg">
+    <img src="img/8.jpeg">
+    <img src="img/9.jpeg">
+    <img src="img/10.jpeg">
+  </div>
+</section>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -85,19 +118,20 @@
   </div>
 
   <!-- Videos -->
-  <section id="videos">
-    <h2>Videos</h2>
-    <div class="videos">
-      <video controls>
-        <source src="video/video1.mp4" type="video/mp4">
-        Tu navegador no soporta video.
-      </video>
-      <video controls>
-        <source src="video/video2.mp4" type="video/mp4">
-        Tu navegador no soporta video.
-      </video>
-    </div>
-  </section>
+  <section id="videos" class="oculto">
+  <h2>Videos</h2>
+  <div class="videos">
+    <video controls>
+      <source src="video/video1.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <video controls>
+      <source src="video/video2.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+  </div>
+</section>
+
 
   
   <!-- Contacto -->

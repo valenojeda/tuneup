@@ -71,10 +71,10 @@ header.hero::before {
 }
 
 .hero-logo {
-  max-width: 550px; /* tamaño más grande */
+  max-width: 550px;
   width: 90%;
-  filter: drop-shadow(0 0 12px rgba(0,0,0,0.8)); /* sombra para contraste */
-  animation: fadeIn 2s ease-in-out; /* animación de entrada */
+  filter: drop-shadow(0 0 12px rgba(0,0,0,0.8));
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* Animación del logo */
@@ -307,4 +307,56 @@ footer {
   color: #ddd;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.precio-card button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #e74c3c;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.precio-card button:hover {
+  background: #c0392b;
+}
+/* Secciones de salas */
+.sala {
+  background: #111;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 2px solid #e74c3c;
+}
+
+.sala h2 {
+  color: #e74c3c;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Ocultar por defecto */
+.oculto {
+  display: none;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.thumbnails img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(231, 76, 60, 0.6);
 }

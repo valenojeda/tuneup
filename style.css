@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -19,14 +22,13 @@ body {
   align-items: center;
   z-index: 1000;
 }
-
 .navbar .logo {
+  font-family: 'Gloria Hallelujah', cursive; /* Fuente aplicada */
   font-weight: bold;
   font-size: 1.4rem;
   color: #e74c3c;
   margin-right: 40px;
 }
-
 .navbar .menu {
   list-style: none;
   display: flex;
@@ -92,13 +94,12 @@ header.hero::before {
   text-align: center;
   max-width: 800px;
 }
-
 .bienvenida-content h2 {
+  font-family: 'Gloria Hallelujah', cursive; /* Fuente aplicada */
   color: #e74c3c;
   font-size: 2.2rem;
   margin-bottom: 20px;
 }
-
 .bienvenida-content .subtitulo {
   font-size: 1.2rem;
   font-style: italic;
@@ -121,10 +122,10 @@ header.hero::before {
 }
 
 .bienvenida-content .resaltado {
+  font-family: 'Gloria Hallelujah', cursive; /* Fuente aplicada */
   color: #e74c3c;
   text-transform: uppercase;
 }
-
 /* Galería */
 .thumbnails {
   display: grid;
@@ -252,6 +253,9 @@ footer {
   text-align: center;
   padding: 20px;
   color: #fff;
+}
+footer .tuneup {
+  font-family: 'Gloria Hallelujah', cursive; /* Fuente aplicada */
 }
 
 /* Precios */
@@ -451,4 +455,85 @@ footer {
 
 .volver-videos button:hover {
   background: #e74c3c;
+}
+
+.direccion {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mapa {
+  margin: 20px auto;
+  width: 400px;   /* ancho fijo más chico */
+  height: 250px;  /* alto fijo */
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+#estacionamiento {
+  background: #111;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 2px solid #e74c3c;
+}
+
+#estacionamiento h2 {
+  color: #e74c3c;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#estacionamiento p {
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+/* Estilos por defecto (desktop) */
+.menu-toggle {
+  display: none; /* oculto en escritorio */
+}
+
+/* Responsive: pantallas chicas */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .menu {
+    display: none; /* oculto por defecto en móviles */
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 70px; /* debajo de la navbar */
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .menu.show {
+    display: flex; /* se muestra al activar */
+  }
+
+  .menu-toggle {
+    display: block; /* visible en móviles */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .menu li {
+    margin: 15px 0;
+  }
 }

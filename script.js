@@ -1,24 +1,18 @@
 // Función para mostrar la sala seleccionada con fade
 function mostrarSala(tipo) {
-  // Ocultar todas las salas
   document.querySelectorAll('.sala').forEach(s => {
     s.classList.add('oculto');
     s.classList.remove('show');
   });
 
-  // Mostrar la sala elegida con animación
   const sala = document.getElementById('sala-' + tipo);
   sala.classList.remove('oculto');
   sala.classList.add('show');
   sala.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Función para volver atrás
 function volverAtras() {
-  // Ocultar todas las salas
   document.querySelectorAll('.sala').forEach(s => s.classList.add('oculto'));
-
-  // Scroll hacia la sección de precios
   document.getElementById('precios').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -33,12 +27,10 @@ const nextBtn = document.querySelector('.next');
 let currentIndex = 0;
 let images = [];
 
-// Actualizar lista de imágenes cada vez que se muestra una sala
 function actualizarImagenes() {
   images = Array.from(document.querySelectorAll('.sala:not(.oculto) .thumbnails img'));
 }
 
-// Mostrar imagen en el lightbox
 function showImage(index) {
   if (images.length > 0) {
     lightboxImg.src = images[index].src;
@@ -47,7 +39,6 @@ function showImage(index) {
   }
 }
 
-// Delegar evento de clic en miniaturas
 document.addEventListener('click', (e) => {
   if (e.target.closest('.thumbnails img')) {
     actualizarImagenes();
@@ -57,19 +48,16 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Cerrar con botón "X"
 closeBtn.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
 
-// Cerrar si se hace clic fuera de la imagen
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) {
     lightbox.style.display = 'none';
   }
 });
 
-// Botón anterior
 prevBtn.addEventListener('click', () => {
   if (images.length > 0) {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -77,7 +65,6 @@ prevBtn.addEventListener('click', () => {
   }
 });
 
-// Botón siguiente
 nextBtn.addEventListener('click', () => {
   if (images.length > 0) {
     currentIndex = (currentIndex + 1) % images.length;
@@ -85,7 +72,6 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
-// Cerrar lightbox con tecla ESC
 document.addEventListener('keydown', (e) => {
   if (e.key === "Escape") {
     lightbox.style.display = 'none';
@@ -94,13 +80,11 @@ document.addEventListener('keydown', (e) => {
 
 // Mostrar videos con fade
 function mostrarVideos() {
-  // Ocultar todas las salas
   document.querySelectorAll('.sala').forEach(s => {
     s.classList.add('oculto');
     s.classList.remove('show');
   });
 
-  // Mostrar la sección de videos con animación
   const videos = document.getElementById('videos');
   videos.classList.remove('oculto');
   videos.classList.add('show');
@@ -108,9 +92,29 @@ function mostrarVideos() {
 }
 
 function volverVideos() {
-  // Ocultar la sección de videos
   document.getElementById('videos').classList.add('oculto');
-
-  // Hacer scroll hacia la sección de precios
   document.getElementById('precios').scrollIntoView({ behavior: 'smooth' });
 }
+
+// --- Menú responsive ---
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll('.menu a');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+  // Cambiar ícono ☰ ↔ X
+  if (menu.classList.contains('show')) {
+    menuToggle.textContent = '✖';
+  } else {
+    menuToggle.textContent = '☰';
+  }
+});
+
+// Cerrar menú al hacer clic en un enlace
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('show');
+    menuToggle.textContent = '☰'; // volver al ícono hamburguesa
+  });
+});

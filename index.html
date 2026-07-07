@@ -7,16 +7,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
  <!-- Navbar -->
 <nav class="navbar">
-  <div class="logo">TUNE UP</div>
+  <div class="logo tuneup">TUNE UP</div>
+  <button class="menu-toggle">☰</button> <!-- Botón hamburguesa -->
   <ul class="menu">
     <li><a href="#bienvenida">Inicio</a></li>
     <li><a href="#precios">Precios</a></li>
     <li><a href="#contacto">Contacto</a></li>
     <li><a href="#videos" onclick="mostrarVideos()">Videos</a></li>
+    <li><a href="#direccion">Cómo llegar</a></li>
   </ul>
 </nav>
+
 
   <!-- Portada -->
   <header class="hero">
@@ -126,6 +130,7 @@
   <button onclick="volverAtras()">⬅ Volver</button>
 </section>
 
+
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
@@ -164,6 +169,24 @@
       <a href="https://www.instagram.com/saladeensayo_tune_up" target="_blank" class="btn instagram">📸 Instagram @saladeensayo_tune_up</a>
     </div>
   </section>
+
+<!-- Dirección -->
+<section id="direccion">
+  <p class="direccion">📍 Dirección: Güemes 3090, Montevideo, Uruguay</p>
+  <div class="mapa">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.9999999999995!2d-56.164!3d-34.901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f805999999999%3A0x9999999999999999!2sG%C3%BCemes%203090%2C%20Montevideo%2C%20Uruguay!5e0!3m2!1ses!2suy!4v1720370000000"
+      width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- Estacionamiento -->
+<section id="estacionamiento">
+  <h2>Estacionamiento</h2>
+  <p>Contamos con espacio para estacionar, para que vengas con comodidad y sin preocupaciones.</p>
+</section>
+
 
   <!-- Footer -->
   <footer>

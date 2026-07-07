@@ -495,21 +495,15 @@ footer .tuneup {
   line-height: 1.6;
 }
 
-
 /* Estilos por defecto (desktop) */
 .menu-toggle {
-  display: none; /* oculto en escritorio */
+  display: none;
 }
 
 /* Responsive: pantallas chicas */
 @media (max-width: 768px) {
-  .navbar {
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
   .menu {
-    display: none; /* oculto por defecto en móviles */
+    display: none; /* oculto por defecto */
     flex-direction: column;
     background: #111;
     position: absolute;
@@ -518,6 +512,7 @@ footer .tuneup {
     width: 100%;
     padding: 20px 0;
     text-align: center;
+    z-index: 999; /* para que quede encima */
   }
 
   .menu.show {
@@ -525,7 +520,7 @@ footer .tuneup {
   }
 
   .menu-toggle {
-    display: block; /* visible en móviles */
+    display: block;
     background: none;
     border: none;
     color: #fff;

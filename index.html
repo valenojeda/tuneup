@@ -11,16 +11,16 @@
  <!-- Navbar -->
 <nav class="navbar">
   <div class="logo tuneup">TUNE UP</div>
-  <button class="menu-toggle">☰</button> <!-- Botón hamburguesa -->
+  <button class="menu-toggle">☰</button>
   <ul class="menu">
     <li><a href="#bienvenida">Inicio</a></li>
     <li><a href="#precios">Precios</a></li>
     <li><a href="#contacto">Contacto</a></li>
     <li><a href="#videos" onclick="mostrarVideos()">Videos</a></li>
     <li><a href="#direccion">Cómo llegar</a></li>
+ <li class="horarios">⏰Lunes a sábado 10 a 22</li>
   </ul>
 </nav>
-
 
   <!-- Portada -->
   <header class="hero">
@@ -51,11 +51,14 @@
       <p class="precio">$450 / hora</p>
       <p>Espacio ideal para solistas o grupos pequeños. Incluye:</p>
       <ul>
-        <li>🎵 Amplificador</li>
-        <li>🔊 Parlante</li>
-        <li>🎚️ Consola</li>
-        <li>🎤 Micrófono</li>
-        <li>🥁 Batería</li>
+        <li>🎵 Amplificador Fender para bajo – 25W</li>
+        <li>🎸 Amplificador Laney para guitarra</li>
+        <li>🔊 Cajas de 15"</li>
+        <li>🔊 Monitor Lexen potenciado 10"</li>
+        <li>🎚️ Consola de 8 canales</li>
+        <li>🎚️ Consola Peavey 14 canales Stereo Mixer</li>
+        <li>🥁 Batería acústica Tornado</li>
+        <li>🎤 Micrófonos</li>
       </ul>
       <p><strong>Promo cuponera:</strong> 4 ensayos de 2 horas por $2400</p>
       <button onclick="mostrarSala('chica')">Ver fotos</button>
@@ -67,12 +70,14 @@
       <p class="precio">$600 / hora</p>
       <p>Ideal para bandas completas. Incluye:</p>
       <ul>
-        <li>🎸 Amplificador de guitarra</li>
-        <li>🎵 Amplificador de bajo</li>
-        <li>🎤 Micrófonos</li>
-      <li>🥁 Batería</li>
-        <li>🎚️ Consola</li>
-        <li>🔊 Monitores de piso y parlantes</li>
+        <li>🎵 Amplificador Peavey para bajo – 150W</li>
+        <li>🎸 Amplificador Laney para guitarra – 60W</li>
+        <li>🔊 Equipo Alto 2500W serie TS</li>
+        <li>🔊 Monitores de 15"</li>
+        <li>🔊 Monitor potenciado Lexen 10"</li>
+        <li>🎚️ Consola de 12 canales</li>
+        <li>🎤 Micrófonos Shure SM58 / SV100</li>
+        <li>🎤 Micrófonos Behringer XM8500</li>
       </ul>
       <p><strong>Promo inauguración:</strong> válida hasta octubre</p>
       <button onclick="mostrarSala('grande')">Ver fotos</button>
@@ -130,7 +135,6 @@
   <button onclick="volverAtras()">⬅ Volver</button>
 </section>
 
-
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
@@ -154,8 +158,6 @@
     <button onclick="volverVideos()">⬅ Volver</button>
   </div>
 </section>
-
-
 
   <!-- Contacto -->
   <section id="contacto">
@@ -183,16 +185,15 @@
 
 <!-- Estacionamiento -->
 <section id="estacionamiento">
-  <h2>Estacionamiento</h2>
+  <h2>🚗 Estacionamiento</h2>
   <p>Contamos con espacio para estacionar, para que vengas con comodidad y sin preocupaciones.</p>
 </section>
 
+<!-- Footer -->
+<footer>
+  <p>© 2026 TUNE UP - Sala de Ensayo</p>
+</footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 TUNE UP - Sala de Ensayo</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
